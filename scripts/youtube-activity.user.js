@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        YouTube Activity Check Removal
-// @namespace   http://kristobaljunta.tk
+// @namespace   https://github.com/kristobaljunta/userscripts
 // @include     https://youtube.com/*
 // @include     https://*.youtube.com/*
 // @version     2

@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Madheads Coffee Filter
 // @namespace    https://github.com/kristobaljunta/userscripts
-// @updateURL    https://github.com/kristobaljunta/userscripts/raw/master/madheads.user.js
-// @downloadURL  https://github.com/kristobaljunta/userscripts/raw/master/madheads.user.js
-// @version      0.2
+// @updateURL    https://github.com/kristobaljunta/userscripts/raw/master/scripts/madheads.user.js
+// @downloadURL  https://github.com/kristobaljunta/userscripts/raw/master/scripts/madheads.user.js
+// @version      0.3
 // @description  Filter MadHeads coffee based on roast type
 // @author       KristobalJunta
 // @match        https://madheadscoffee.com/product-category/coffee/*

@@ -3,7 +3,7 @@
 // @namespace    https://github.com/kristobaljunta/userscripts
 // @updateURL    https://github.com/kristobaljunta/userscripts/raw/master/scripts/madheads.user.js
 // @downloadURL  https://github.com/kristobaljunta/userscripts/raw/master/scripts/madheads.user.js
-// @version      0.3
+// @version      0.4
 // @description  Filter MadHeads coffee based on roast type
 // @author       KristobalJunta
 // @match        https://madheadscoffee.com/product-category/coffee/*
@@ -19,7 +19,7 @@
     const VALUE_FILTER = 'Фільтр'
 
     const prodsSelector = '.products > li'
-    const roastSelector = '[name="attribute_obsmazhuvannya"]'
+    const roastSelector = '[name="attribute_obsmazhennya"]'
 
     let selectEl = document.createElement('select')
     for (let opt of [VALUE_ALL, VALUE_ESPRESSO, VALUE_FILTER]) {
@@ -28,6 +28,9 @@
         optionEl.text = opt
         selectEl.appendChild(optionEl)
     }
+
+    selectEl.style.paddingLeft = '5px'
+    selectEl.style.borderLeft = '1px solid'
 
     document.querySelector('h1.page-title').appendChild(selectEl)
 
@@ -39,7 +42,10 @@
             }
 
             let roastSelect = prod.querySelector(roastSelector)
-            if (Array.from(roastSelect.options).map(opt => opt.value).includes(e.target.value)) {
+
+            if (!roastSelect) {
+                prod.style.display = 'none'
+            } else if (Array.from(roastSelect.options).map(opt => opt.value).includes(e.target.value)) {
                 roastSelect.value = e.target.value
                 prod.style.display = ''
             } else {
